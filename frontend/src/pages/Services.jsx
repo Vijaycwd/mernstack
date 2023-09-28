@@ -15,12 +15,10 @@ function Services() {
   
   const [data, setData] = useState(null);
   const [dataid , setDataid] =  useState();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData()]);
 
   function getData() {
     Axios.get(
@@ -32,11 +30,7 @@ function Services() {
     })
     .catch((error) => {
       console.error("Error fetching data: ", error);
-      setError(error);
     })
-    .finally(() => {
-      setLoading(false);
-    });
   }
   function deleteItem(id){
     Axios.delete(`http://localhost:5001/emp/${id}`)
