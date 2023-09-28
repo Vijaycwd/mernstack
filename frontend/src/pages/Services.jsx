@@ -5,15 +5,12 @@ import Axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
-import Alert from 'react-bootstrap/Alert';
 import Sidebar from '../components/Sidebar';
 function Services() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [empid, setId] = useState();
   const [editbtn, setEditbtn] = useState(false);
-  const [updateUsr, setUpdateusr] = useState();
   let createUser = "";
   
   const [data, setData] = useState(null);
